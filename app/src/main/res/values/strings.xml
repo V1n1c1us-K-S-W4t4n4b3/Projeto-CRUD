@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Projeto CRUD</string>
+    <string name="subscribe_title">Subscribe</string>
 </resources>
