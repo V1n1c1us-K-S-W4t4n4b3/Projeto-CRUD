@@ -40,7 +40,6 @@ class CRUDFragment : Fragment(R.layout.fragment_c_r_u_d) {
 
     }
 
-
     private fun observerEvents() {
         viewModel.subscribersStateEventData.observe(viewLifecycleOwner) { subscriberState ->
             when (subscriberState) {
@@ -50,7 +49,6 @@ class CRUDFragment : Fragment(R.layout.fragment_c_r_u_d) {
                 }
             }
         }
-
 
         viewModel.messageEventData.observe(viewLifecycleOwner) { stringResId ->
             Snackbar.make(requireView(), stringResId, Snackbar.LENGTH_LONG).show()

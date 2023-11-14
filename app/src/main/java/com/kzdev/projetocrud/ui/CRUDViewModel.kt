@@ -42,7 +42,7 @@ class CRUDViewModel(private val repository: SubscriberRepository) : ViewModel() 
     }
 
     sealed class SubscriberState {
-        object Inserted : SubscriberState()
+        data object Inserted : SubscriberState()
     }
 
     companion object {
