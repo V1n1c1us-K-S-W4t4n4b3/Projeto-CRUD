@@ -3,11 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/CRUDFragment">
+    app:startDestination="@id/subscriberListFragment">
+
+    <fragment
+        android:id="@+id/subscriberListFragment"
+        android:name="com.kzdev.projetocrud.ui.subscriberlist.SubscriberListFragment"
+        android:label="fragment_subscriber_list"
+        tools:layout="@layout/fragment_subscriber_list" />
 
     <fragment
         android:id="@+id/CRUDFragment"
         android:name="com.kzdev.projetocrud.ui.CRUDFragment"
         android:label="@string/subscribe_title"
         tools:layout="@layout/fragment_c_r_u_d" />
+
 </navigation>
