@@ -48,7 +48,6 @@ class SubscriberListFragment : Fragment(R.layout.fragment_subscriber_list) {
     private fun observeViewModelsEventes() {
 
         viewModel.allSubscribersEvents.observe(viewLifecycleOwner) { allSubscribers ->
-
             val subsListAdapter = SubscriberListAdapter(allSubscribers)
 
             binding.rvSubs.let {
@@ -58,6 +57,11 @@ class SubscriberListFragment : Fragment(R.layout.fragment_subscriber_list) {
                 }
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.getSubscribers()
     }
 
     private fun configViewListener() {
