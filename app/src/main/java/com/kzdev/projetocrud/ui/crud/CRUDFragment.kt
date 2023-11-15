@@ -1,4 +1,4 @@
-package com.kzdev.projetocrud.ui
+package com.kzdev.projetocrud.ui.crud
 
 import android.os.Bundle
 import android.view.View
@@ -47,6 +47,8 @@ class CRUDFragment : Fragment(R.layout.fragment_c_r_u_d) {
                     clearFields()
                     hideKeyboard()
                 }
+
+                else -> {}
             }
         }
 

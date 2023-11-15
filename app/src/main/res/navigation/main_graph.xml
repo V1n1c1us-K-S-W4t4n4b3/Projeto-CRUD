@@ -8,12 +8,12 @@
     <fragment
         android:id="@+id/subscriberListFragment"
         android:name="com.kzdev.projetocrud.ui.subscriberlist.SubscriberListFragment"
-        android:label="fragment_subscriber_list"
+        android:label="@string/subscriber_title"
         tools:layout="@layout/fragment_subscriber_list" />
 
     <fragment
         android:id="@+id/CRUDFragment"
-        android:name="com.kzdev.projetocrud.ui.CRUDFragment"
+        android:name="com.kzdev.projetocrud.ui.crud.CRUDFragment"
         android:label="@string/subscribe_title"
         tools:layout="@layout/fragment_c_r_u_d" />
 

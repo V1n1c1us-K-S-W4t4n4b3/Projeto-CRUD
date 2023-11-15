@@ -32,6 +32,7 @@ class SubscriberListAdapter(private val subscribers: List<SubscriberEntity>) :
 
         private val tVSubName: TextView = itemView.findViewById(R.id.tv_name)
         private val tVSubEmail: TextView = itemView.findViewById(R.id.tv_email)
+
         fun bindView(subscriber: SubscriberEntity) {
             tVSubName.text = subscriber.name
             tVSubEmail.text = subscriber.email

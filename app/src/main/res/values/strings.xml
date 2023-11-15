@@ -3,4 +3,5 @@
     <string name="subscribe_title">Subscribe</string>
     <string name="subscribe_insert_successfully">Sucesso ao inserir inscrito</string>
     <string name="subscribe_error_to_insert">Erro ao inserir inscrito</string>
+    <string name="subscriber_title">Subscriber List</string>
 </resources>

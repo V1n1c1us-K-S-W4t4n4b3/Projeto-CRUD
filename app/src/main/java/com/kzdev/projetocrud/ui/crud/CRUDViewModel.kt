@@ -1,4 +1,4 @@
-package com.kzdev.projetocrud.ui
+package com.kzdev.projetocrud.ui.crud
 
 import android.util.Log
 import androidx.lifecycle.LiveData

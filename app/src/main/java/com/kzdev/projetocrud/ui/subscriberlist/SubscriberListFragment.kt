@@ -11,8 +11,8 @@ import androidx.navigation.fragment.findNavController
 import com.kzdev.projetocrud.R
 import com.kzdev.projetocrud.data.db.AppDataBase
 import com.kzdev.projetocrud.data.db.dao.SubscriberDAO
-import com.kzdev.projetocrud.databinding.FragmentCRUDBinding
 import com.kzdev.projetocrud.databinding.FragmentSubscriberListBinding
+import com.kzdev.projetocrud.extension.navigateWithAnimations
 import com.kzdev.projetocrud.repository.DatabaseDataSource
 import com.kzdev.projetocrud.repository.SubscriberRepository
 
@@ -21,6 +21,7 @@ class SubscriberListFragment : Fragment(R.layout.fragment_subscriber_list) {
     private val viewModel: SubscriberListViewModel by viewModels {
         object : ViewModelProvider.Factory {
             override fun <T : ViewModel> create(modelClass: Class<T>): T {
+
                 val subscriberDAO: SubscriberDAO =
                     AppDataBase.getInstance(requireContext()).subscriberDAO
 
@@ -41,6 +42,7 @@ class SubscriberListFragment : Fragment(R.layout.fragment_subscriber_list) {
 
         configViewListener()
 
+
     }
 
     private fun observeViewModelsEventes() {
@@ -60,7 +62,7 @@ class SubscriberListFragment : Fragment(R.layout.fragment_subscriber_list) {
 
     private fun configViewListener() {
         binding.fabAddButton.setOnClickListener {
-            findNavController().navigate(R.id.CRUDFragment)
+            findNavController().navigateWithAnimations(R.id.CRUDFragment)
         }
     }
 }
