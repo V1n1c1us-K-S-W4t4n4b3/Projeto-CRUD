@@ -21,7 +21,7 @@
         android:paddingBottom="8dp">
 
         <TextView
-            android:id="@+id/tv_name"
+            android:id="@+id/text_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
@@ -29,11 +29,11 @@
             tools:text="Vinicius Watanabe" />
 
         <TextView
-            android:id="@+id/tv_email"
+            android:id="@+id/text_data"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            tools:text="contatoKZDev@outlook.com" />
+            tools:text="03/05/1998" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

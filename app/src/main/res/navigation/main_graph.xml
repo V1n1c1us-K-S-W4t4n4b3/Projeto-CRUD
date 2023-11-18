@@ -5,16 +5,27 @@
     android:id="@+id/main_graph"
     app:startDestination="@id/subscriberListFragment">
 
+
     <fragment
         android:id="@+id/subscriberListFragment"
         android:name="com.kzdev.projetocrud.ui.subscriberlist.SubscriberListFragment"
-        android:label="@string/subscriber_title"
-        tools:layout="@layout/fragment_subscriber_list" />
+        android:label="Subscriber List"
+        tools:layout="@layout/fragment_subscriber_list" >
+        <action
+            android:id="@+id/action_subscriberListFragment_to_subscriberFragment"
+            app:destination="@id/subscriberFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/CRUDFragment"
-        android:name="com.kzdev.projetocrud.ui.crud.CRUDFragment"
-        android:label="@string/subscribe_title"
-        tools:layout="@layout/fragment_c_r_u_d" />
+        android:id="@+id/subscriberFragment"
+        android:name="com.kzdev.projetocrud.ui.subscriber.SubscriberFragment"
+        android:label="Usuário"
+        tools:layout="@layout/fragment_subscriber" >
+        <argument
+            android:name="subscriber"
+            app:argType="com.kzdev.projetocrud.data.db.entity.SubscriberEntity"
+            android:defaultValue="@null"
+            app:nullable="true" />
+    </fragment>
 
 </navigation>

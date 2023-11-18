@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Projeto CRUD</string>
     <string name="subscribe_title">Subscribe</string>
-    <string name="subscribe_insert_successfully">Sucesso ao inserir inscrito</string>
-    <string name="subscribe_error_to_insert">Erro ao inserir inscrito</string>
-    <string name="subscriber_title">Subscriber List</string>
+    <string name="subscriber_button_update">Update</string>
+    <string name="subscriber_insert_successfully">Subscriber was successfully inserted</string>
+    <string name="subscriber_update_successfully">Subscriber was successfully update</string>
+    <string name="subscriber_error_to_insert">There was an error when inserting Subscriber</string>
 </resources>

@@ -1,25 +1,41 @@
 package com.kzdev.projetocrud.repository
 
-import androidx.lifecycle.LiveData
 import com.kzdev.projetocrud.data.db.dao.SubscriberDAO
 import com.kzdev.projetocrud.data.db.entity.SubscriberEntity
 
-class DatabaseDataSource(private val subscriberDAO: SubscriberDAO) : SubscriberRepository {
-    override suspend fun insertSubscriber(name: String, email: String): Long {
+class DataBaseDataSource(
+    private val subscriberDAO: SubscriberDAO
+) : SubscriberRepository {
+    override suspend fun insertSubscriber(
+        name: String,
+        birth: String,
+        cpf: String,
+        tel: String,
+    ): Long {
         val subscriber = SubscriberEntity(
             name = name,
-            email = email
+            birth = birth,
+            cpf = cpf,
+            tel = tel
         )
 
         return subscriberDAO.insert(subscriber)
 
     }
 
-    override suspend fun updateSubscriber(id: Long, name: String, email: String) {
+    override suspend fun updateSubscriber(
+        id: Long,
+        name: String,
+        birth: String,
+        cpf: String,
+        tel: String,
+    ) {
         val subscriber = SubscriberEntity(
             id = id,
             name = name,
-            email = email
+            birth = birth,
+            cpf = cpf,
+            tel = tel
         )
         subscriberDAO.update(subscriber)
     }
@@ -28,11 +44,11 @@ class DatabaseDataSource(private val subscriberDAO: SubscriberDAO) : SubscriberR
         subscriberDAO.delete(id)
     }
 
-    override suspend fun deleteAllSubscrubers() {
+    override suspend fun deleteAllSubscriber() {
         subscriberDAO.deleteAll()
     }
 
-    override suspend fun getAllSubscribers(): List<SubscriberEntity> {
+    override suspend fun getAllSubscriber(): List<SubscriberEntity> {
         return subscriberDAO.getAll()
     }
 }

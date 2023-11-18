@@ -8,17 +8,16 @@ import com.kzdev.projetocrud.data.db.entity.SubscriberEntity
 import com.kzdev.projetocrud.repository.SubscriberRepository
 import kotlinx.coroutines.launch
 
-class SubscriberListViewModel(private val repository: SubscriberRepository) : ViewModel() {
+class SubscriberListViewModel(
+    private val repository: SubscriberRepository
+) : ViewModel() {
 
+    private val _allSubscriberEvent = MutableLiveData<List<SubscriberEntity>>()
+    val allSubscriberEvent: LiveData<List<SubscriberEntity>>
+        get() = _allSubscriberEvent
 
-    private val _allSubscribersEvent = MutableLiveData<List<SubscriberEntity>>()
-
-    val allSubscribersEvents: LiveData<List<SubscriberEntity>>
-        get() = _allSubscribersEvent
-
-
-    fun getSubscribers() = viewModelScope.launch {
-        _allSubscribersEvent.postValue(repository.getAllSubscribers())
+    fun getSubscriber() = viewModelScope.launch {
+        _allSubscriberEvent.postValue(repository.getAllSubscriber())
     }
 
 }

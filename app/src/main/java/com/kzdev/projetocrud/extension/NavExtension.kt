@@ -1,6 +1,7 @@
 package com.kzdev.projetocrud.extension
 
 import androidx.navigation.NavController
+import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
 import com.kzdev.projetocrud.R
 
@@ -17,4 +18,10 @@ fun NavController.navigateWithAnimations(
     animation: NavOptions = slideLefOptions,
 ) {
     this.navigate(destinationId, null, animation)
+}
+fun NavController.navigateWithAnimations(
+    directions: NavDirections,
+    animation: NavOptions = slideLefOptions
+) {
+    this.navigate(directions, animation)
 }

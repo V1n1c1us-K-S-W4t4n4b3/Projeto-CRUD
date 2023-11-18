@@ -8,8 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kzdev.projetocrud.R
 import com.kzdev.projetocrud.data.db.entity.SubscriberEntity
 
-class SubscriberListAdapter(private val subscribers: List<SubscriberEntity>) :
+class SubscriberListAdapter(private val subscriber: List<SubscriberEntity>) :
     RecyclerView.Adapter<SubscriberListAdapter.SubscriberListViewHolder>() {
+
+    var onItemClick: ((entity: SubscriberEntity) -> Unit)? = null
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SubscriberListViewHolder {
@@ -22,20 +24,24 @@ class SubscriberListAdapter(private val subscribers: List<SubscriberEntity>) :
     }
 
     override fun onBindViewHolder(holder: SubscriberListViewHolder, position: Int) {
-        holder.bindView(subscribers[position])
+        holder.bindView(subscriber[position])
     }
 
-    override fun getItemCount() = subscribers.size
+    override fun getItemCount() = subscriber.size
 
 
-    class SubscriberListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class SubscriberListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        private val tVSubName: TextView = itemView.findViewById(R.id.tv_name)
-        private val tVSubEmail: TextView = itemView.findViewById(R.id.tv_email)
+        private val tVSubName: TextView = itemView.findViewById(R.id.text_name)
+        private val tVSubEmail: TextView = itemView.findViewById(R.id.text_data)
 
         fun bindView(subscriber: SubscriberEntity) {
             tVSubName.text = subscriber.name
-            tVSubEmail.text = subscriber.email
+            tVSubEmail.text = subscriber.birth
+
+            itemView.setOnClickListener {
+                onItemClick?.invoke(subscriber)
+            }
         }
     }
 }

@@ -1,11 +1,11 @@
 package com.kzdev.projetocrud.data.db.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.kzdev.projetocrud.data.db.entity.SubscriberEntity
+
 
 @Dao
 interface SubscriberDAO {
@@ -15,12 +15,13 @@ interface SubscriberDAO {
     @Update
     suspend fun update(subscriber: SubscriberEntity)
 
-    @Query("DELETE FROM subscriber WHERE id = :id")
+    @Query("DELETE FROM user WHERE id = :id")
     suspend fun delete(id: Long)
 
-    @Query("DELETE FROM subscriber")
+    @Query("DELETE FROM user")
     suspend fun deleteAll()
 
-    @Query("SELECT * FROM subscriber")
+    @Query("SELECT * FROM user")
     suspend fun getAll(): List<SubscriberEntity>
+
 }
