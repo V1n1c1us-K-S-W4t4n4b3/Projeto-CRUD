@@ -3,6 +3,9 @@
     <string name="subscribe_title">Subscribe</string>
     <string name="subscriber_button_update">Update</string>
     <string name="subscriber_insert_successfully">Subscriber was successfully inserted</string>
+    <string name="subscriber_deleted_successfully">Subscriber was successfully deleted</string>
     <string name="subscriber_update_successfully">Subscriber was successfully update</string>
     <string name="subscriber_error_to_insert">There was an error when inserting Subscriber</string>
+    <string name="subscriber_error_to_delete">There was an error when deleting Subscriber</string>
+    <string name="subscriber_error_to_update">There was an error when updating Subscriber</string>
 </resources>

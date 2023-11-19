@@ -46,24 +46,24 @@ class SubscriberFragment : Fragment(R.layout.fragment_subscriber) {
             binding.inputData.setText(subscriber.birth)
             binding.inputCpf.setText(subscriber.cpf)
             binding.inputCel.setText(subscriber.tel)
+
+            binding.buttonDelete.visibility = View.VISIBLE
         }
 
         observeEvents()
         setListeners()
     }
+
     private fun observeEvents() {
         viewModel.subscriberStateEvenData.observe(viewLifecycleOwner) { subscriberState ->
             when (subscriberState) {
-                is SubscriberViewModel.SubscriberState.Inserted -> {
+                is SubscriberViewModel.SubscriberState.Inserted,
+                is SubscriberViewModel.SubscriberState.Update,
+                is SubscriberViewModel.SubscriberState.Deleted -> {
+
                     clearFields()
                     hideKeyboard()
                     requireView().requestFocus()
-
-                    findNavController().popBackStack()
-                }
-                is SubscriberViewModel.SubscriberState.Update -> {
-                    clearFields()
-                    hideKeyboard()
                     findNavController().popBackStack()
                 }
             }
@@ -96,6 +96,10 @@ class SubscriberFragment : Fragment(R.layout.fragment_subscriber) {
             val tel = binding.inputCel.text.toString()
 
             viewModel.addOrUpdateSubscriber(name, birth, cpf, tel, args.subscriber?.id ?: 0)
+        }
+
+        binding.buttonDelete.setOnClickListener {
+            viewModel.removeSubscriber(args.subscriber?.id ?: 0)
         }
     }
 }
